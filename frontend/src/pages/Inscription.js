@@ -38,9 +38,9 @@ function Inscription() {
     const onSubmit = (data) => {
         axios.post("http://localhost:3500/api/auth/signup", data)
         .then((response) => {
-          console.log(data);
+          console.log(response.error);
           if(response.data.error){
-            alert("Un champs de saisi est mal renseigné");
+            alert(response);
         } else {
             alert('Utilisateur Crée, merci de vous connecter');
             history.push("/connexion");

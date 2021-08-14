@@ -250,12 +250,12 @@ h1{
   margin-bottom: 15px;
   font-size: 1.2em;
   border-radius: 10px 10px;
-  height: 37px;
+  height: auto;
   display: flex;
   justify-content: space-between;
 }
 .commentaireLabel{
-  height: 37px;
+  height: auto;
   border-top-left-radius: 10px 10px;
   border-bottom-left-radius: 10px 10px;
   background-color: #DCDCDC;
@@ -265,6 +265,10 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.commentaire button{
+  height: auto;
+  margin: 0;
 }
 
 .divBtn{
@@ -407,4 +411,73 @@ ul {
 .divFoot{
   display: flex;
   flex-direction: column;
+}
+.displayHr{
+  display: none;
+}
+button:hover{
+  opacity: 0.75;
+}
+
+@media screen and (max-width: 560px){
+    .App{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .headerContainer{
+      width: 100%;
+      height: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .navbar{
+      flex-direction: column;
+    }
+    .login-page{
+      max-width: 100%;
+    }
+    .footerContainer{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+    }
+    .homeContainer{
+      width: 100%;
+    }
+    .formPost, .post{
+      width: 95%;
+      margin: 20px auto;
+    }
+    .postFoot1 input {
+      width: 65%;
+    }
+    .commentaire{
+      height: auto;
+    }
+    .commentaireLabel{
+      height: auto;
+    }
+    .commentaire button{
+      height: auto;
+      margin: 0%;
+    }
+    .profilHeader{
+      flex-direction: column;
+    }
+    .profilHeader button{
+      margin: 0;
+    }
+    .containerEdit{
+      flex-direction: column;
+    }
+    .divEditProfile{
+      width: 90%;
+    }
+    .displayHr{
+      display: inline;
+      width: 100px;
+    }
 }

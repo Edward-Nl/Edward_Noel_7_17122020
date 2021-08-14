@@ -8,7 +8,6 @@ const nocache = require("nocache")
 
 
 const routesUser = require("./routes/Users")
-//const routesPosts = require("./routes/Posts")
 const routesCommentaires = require("./routes/Commentaires")
 const routesPosts = require("./routes/posts")
 
@@ -42,6 +41,5 @@ app.use("/images", express.static(path.join(__dirname, "images")))
 app.use('/api/auth', routesUser);
 app.use('/api/post', routesPosts);
 app.use('/api/commentaires', routesCommentaires);
-//app.use('/api/images', routesImages);
 
 module.exports = app;

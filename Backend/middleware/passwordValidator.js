@@ -1,3 +1,4 @@
+// Middleware qui permet de demander un Mdp renforcé
 const passwordValidator = require('password-validator');
 
 let schema = new passwordValidator();

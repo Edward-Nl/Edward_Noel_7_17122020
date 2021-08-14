@@ -4,15 +4,16 @@ const db = require("../models");
 const Posts = db.Posts;
 const Likes = db.Likes;
 
+// Récupère tout les post
 exports.allPosts = async (req, res, next) => {
   const listOfPosts = await Posts.findAll({ 
     order: [["createdAt", "DESC"]],
     include: [Likes]});
   const likedPosts = await Likes.findAll({ where: { UserId: req.headers.userid}})
       res.status(200).json({ listOfPosts: listOfPosts, likedPosts: likedPosts})
-       // .catch(error => res.status(400).json({error})
 };
 
+// Récupère un post par son Id
 exports.onePost = async (req, res, next) => {
     const id = req.params.id;
     Posts.findByPk(id)
@@ -20,6 +21,7 @@ exports.onePost = async (req, res, next) => {
         .catch(error => res.status(400).json({error}))
 };
 
+// Récupère tout les posts d'un utilisateur
 exports.userPost = async (req, res, next) => {
     const id = req.params.id;
     const listOfPosts = await Posts.findAll({ order: [["createdAt", "DESC"]], where : {UserId: id}, include: [Likes]});
@@ -27,6 +29,7 @@ exports.userPost = async (req, res, next) => {
     res.status(200).json({ listOfPosts: listOfPosts, likedPosts: likedPosts})
 };
 
+// Créer un post 
 exports.createPost = async (req, res, next) => {
   console.log(req)
     try {
@@ -60,17 +63,18 @@ exports.createPost = async (req, res, next) => {
         });
         }
       } catch (error) {
-        return res.send(`Error when trying upload images: ${error}`);
+        return res.send(`Echec du telechargement du post: ${error}`);
       }
 };
 
+// Supprimer un post 
 exports.deletePost = (req, res, next) => {
     const postId = req.params.postId;
     Posts.destroy({ where: { id: postId } });
-    res.json("DELETED SUCCESSFULLY");
+    res.json("Post supprimé");
   }
 
-
+// Créer, supprimer un like
   exports.createLike = async (req, res, next) => {
     const { PostId, UserId } = req.body;
     const found = await Likes.findOne({

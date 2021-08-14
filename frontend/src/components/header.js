@@ -22,12 +22,15 @@ function Header() {
                 {!authState.status ? (
                     <>
                         <Link to="/inscription">INSCRIPTION</Link>
+                        <hr className="displayHr" />
                         <Link to="/connexion">CONNEXION</Link> 
                     </>
                 ) : (
                     <>
                         <Link to="/">PAGE D'ACCUEIL</Link>
+                        <hr className="displayHr" />
                         <Link to={`/profilPerso/${authState.id}`}>{authState.firstname + " " + authState.lastname}</Link>
+                        <hr className="displayHr" />
                         <Link to="/connexion" onClick={Logout}>Déconnexion</Link> 
                     </>
                 )}

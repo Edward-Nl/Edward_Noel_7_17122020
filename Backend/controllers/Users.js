@@ -22,7 +22,7 @@ exports.signup = (req, res, next) => {
       .catch(error => res.status(500).json({ error }));
   };
 
-// Route qui permet de ce connecter a un compte existant
+// Permet de ce connecter a un compte existant
   exports.login = (req, res, next) => {
     Users.findOne({ where: {email: req.body.email } })
       .then(user => {
@@ -54,6 +54,7 @@ exports.signup = (req, res, next) => {
       .catch(error => res.status(500).json({ error }));
   };
 
+// Récupère les info d'un utilisateur
 exports.userInfo = async(req, res, next) => {
   const id = req.params.id;
   const userInfo = await Users.findByPk(id, {
@@ -62,12 +63,14 @@ exports.userInfo = async(req, res, next) => {
   res.json(userInfo)
 };
 
+// Supprimer un utilisateur
 exports.deleteUser = (req, res, next) => {
   const id = req.params.id;
   Users.destroy({ where: { id: id } });
-  res.json("DELETED SUCCESSFULLY");
+  res.json("Compte supprimé");
 };
 
+// Modifier le Mot de passe 
 exports.editPassword = async (req, res, next) => {
   const id = req.params.id;
   const { oldPassword, newPassword } = req.body;
@@ -81,11 +84,12 @@ exports.editPassword = async (req, res, next) => {
         { password: hash },
         { where: { id: id } }
       );
-      res.json("SUCCESS");
+      res.json("Mot de passe modifié");
     });
   });
 };
 
+// Modifier la Photo d'un utilisateur
 exports.editPicture = async (req, res, next) => {
   console.log(req)
   const id = req.params.id;
@@ -99,6 +103,6 @@ exports.editPicture = async (req, res, next) => {
     fs.writeFileSync( "../Backend/images/tmp/" + image.name, image.data);
     
 
-  return res.send(`File has been uploaded.`);
+  return res.send(`La photo a été télechargé`);
 });
 };
