@@ -1,3 +1,5 @@
+// Page d'inscription au site 
+
 import React from "react";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";

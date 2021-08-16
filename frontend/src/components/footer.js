@@ -1,3 +1,5 @@
+// Component Footer du site 
+
 import React from "react";
 import logo from '../image/logos/icon-left-font-monochrome-white.png'
 
@@ -12,7 +14,7 @@ function Footer() {
                 <h3><ins>Informations légales</ins></h3>
                 <ul>
                     <li>
-                        <span>Conditions generales du site</span>
+                        <span>Conditions générales du site</span>
                     </li>
                     <li>
                         <span>Mentions légales</span>

@@ -1,3 +1,5 @@
+// Page de profil d'un utilisateur autre que celui connecté 
+
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";

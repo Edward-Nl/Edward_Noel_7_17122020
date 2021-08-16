@@ -1,3 +1,5 @@
+// Page pour éditer le profil d'un utilisateur 
+
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";

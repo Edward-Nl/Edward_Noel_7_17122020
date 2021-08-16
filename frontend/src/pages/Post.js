@@ -1,3 +1,5 @@
+// Page de post en detail
+
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
@@ -85,8 +87,9 @@ function Post() {
     return(
         <div className="homeContainer">
             <div className="post">
-                <div className="postHead">
-                    {onePost.username}
+                <div className="postHead headdisplay">
+                    <p>{onePost.username}</p>
+                    
                     {(authState.username === onePost.username || authState.isAdmin === true) && (
                         <button onClick={() => {
                             deletePost(onePost.id)

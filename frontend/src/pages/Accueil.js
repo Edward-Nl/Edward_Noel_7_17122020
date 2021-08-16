@@ -1,3 +1,5 @@
+// Page d'accueil du site 
+
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import FormData from 'form-data';

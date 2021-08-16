@@ -1,3 +1,5 @@
+// Page de modération du profil d'un utilisateur 
+
 import React, { useContext, useEffect } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
