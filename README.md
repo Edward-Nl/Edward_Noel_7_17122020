@@ -1,7 +1,7 @@
 # Projet de cours OpenClassrooms Groupomania  
 Projet de la formation développeur web 
 
- ## Langages et echnologies utilisées  
+ ## Langages et Technologies utilisées  
  * HTML / CSS / JAVASCRIPT 
  * REACT.js  
  * NODE.js  
